@@ -1,11 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
+body,
+html {
+    height: 100%;
+}
 body {
     margin: 0;
     font-family: "Montserrat", sans-serif;
-
     display: grid;
-    grid-template-rows: 51px 30%;
+    grid-template-rows: auto 50px;
+    grid-template-columns: 12% auto;
+    grid-template-areas:
+        "sidebar right"
+        "footer footer";
 }
 a {
     text-decoration: none;
@@ -31,7 +38,6 @@ ul li a {
     font-weight: bold;
     display: inline-block;
 }
-
 header {
     background-color: #41c7c7;
 
@@ -67,4 +73,22 @@ img {
     border-radius: 50%;
     width: 200px;
     height: 200px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: #1c9090;
+    color: #fff;
+    padding: 1em;
+}
+
+.main {
+    grid-area: right;
+    display: grid;
+    grid-template-rows: 51px fit-content(30%);
+}
+
+footer {
+    grid-area: footer;
+    background: lightgray;
 }
