@@ -84,7 +84,7 @@ img {
 
 .main {
     grid-area: right;
-    grid-template-rows: 51px fit-content(30%);
+    grid-template-rows: 51px fit-content(30%) 40%;
     display: grid;
 }
 
@@ -111,11 +111,27 @@ ul#features {
 ul#features li {
     background-color: lightgray;
     padding: 1em;
-}
-
-ul#features li:nth-child(1) {
+    align-self: start;
 }
 
 ul#features li p {
     color: #4c4c4c;
+}
+
+ul#features li:nth-child(1) {
+    background-color: #e6e6e6;
+}
+ul#features li:nth-child(2) {
+    background-color: #d3d3d3;
+    align-self: center;
+}
+ul#features li:nth-child(3) {
+    background-color: #cacaca;
+}
+ul#features li:nth-child(4) {
+    background-color: #e6e6e6;
+    align-self: center;
+}
+ul#features li:nth-child(5) {
+    background-color: #d3d3d3;
 }
