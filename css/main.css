@@ -135,3 +135,17 @@ ul#features li:nth-child(4) {
 ul#features li:nth-child(5) {
     background-color: #d3d3d3;
 }
+
+section#info {
+    background-color: #f2f2f2;
+    padding: 2em;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: space-around;
+}
+
+#mountain-vector {
+    width: 200px;
+    align-self: center;
+}
