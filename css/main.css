@@ -40,13 +40,14 @@ ul li a {
 }
 header {
     background-color: #41c7c7;
-
+    grid-area: head;
     display: grid;
     grid-template-columns: [logo-start] fit-content(20%) [nav-start] auto [nav-end];
 }
 
 section#hero {
     background-color: #36adad;
+    grid-area: hero;
     padding: 2em;
     border-top: 5px solid #2ea0a0;
 
@@ -84,8 +85,13 @@ img {
 
 .main {
     grid-area: right;
-    grid-template-rows: 51px fit-content(30%) 40%;
+    grid-template-rows: 51px fit-content(30%) 40% auto;
     display: grid;
+    grid-template-areas:
+        "head"
+        "hero"
+        "invention"
+        "features";
 }
 
 footer {
@@ -97,6 +103,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(5, auto);
     text-align: center;
+    grid-area: features;
 }
 
 #features i {
@@ -138,6 +145,7 @@ ul#features li:nth-child(5) {
 
 section#info {
     background-color: #f2f2f2;
+    grid-area: invention;
     padding: 2em;
 
     display: grid;
@@ -148,4 +156,36 @@ section#info {
 #mountain-vector {
     width: 200px;
     align-self: center;
+}
+
+@media screen and (max-width: 60em) {
+    body {
+        grid-template-columns: auto;
+        grid-template-areas:
+            "right"
+            "footer";
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        grid-area: right;
+        grid-template-rows: 51px fit-content(30%) 40% auto;
+        display: grid;
+        grid-template-areas:
+            "head"
+            "hero"
+            "features"
+            "invention";
+    }
+
+    #features {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(3, auto);
+    }
+    ul#features li:last-child {
+        grid-column: 1 / span 2;
+    }
 }
