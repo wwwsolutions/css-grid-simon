@@ -3,6 +3,7 @@
 body {
     margin: 0;
     font-family: "Montserrat", sans-serif;
+
     display: grid;
     grid-template-rows: 51px 30%;
 }
@@ -35,8 +36,7 @@ header {
     background-color: #41c7c7;
 
     display: grid;
-    grid-template-columns: 20% auto;
-    /* grid-template-columns: [logo-start] fit-content(20%) [nav-start] auto [nav-end]; */
+    grid-template-columns: [logo-start] fit-content(20%) [nav-start] auto [nav-end];
 }
 
 section#hero {
